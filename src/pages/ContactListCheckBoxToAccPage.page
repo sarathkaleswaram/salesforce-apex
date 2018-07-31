@@ -1,0 +1,22 @@
+<apex:page controller="ContactListCheckBoxToAccApex">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageblockTable value="{!conlist}" var="con">
+                <apex:column >
+                    <apex:facet name="header">Select</apex:facet>
+                    <apex:inputCheckBox value="{!conMap[con.Id]}" />
+                </apex:column> 
+                <apex:column value="{!con.LastName}"/>
+                <apex:column value="{!con.Phone}"/>
+                <apex:column value="{!con.AccountId}"/>
+            </apex:pageblockTable>
+            <br/><br/><div style="font-size:20px;">
+            Select Account<apex:selectList size="1" value="{!selectAcc}">
+            <apex:selectOptions value="{!optionAcc}"/>
+            </apex:selectList>
+            <apex:commandButton value="Link" action="{!LinkMethod}" style="margin-left:50px;"/>
+            </div>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

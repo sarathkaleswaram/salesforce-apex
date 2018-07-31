@@ -1,0 +1,23 @@
+<apex:page controller="AddCtrl">
+<apex:form >
+<apex:pageBlock title="Block A">
+    <apex:pageBlockSection title="Section A">
+        <apex:inputText label="A" value="{!a}"/><br></br>
+        <apex:inputText label="B" value="{!b}"/><br></br>
+        <apex:pageBlock >
+            <div  align="center">
+            <apex:commandButton action="{!add}" value="Add" rerender="id1"/>
+            <apex:commandButton action="{!sub}" value="Subtract" rerender="id1"/>
+            <apex:commandButton action="{!multiply}" value="Multiply" rerender="id1"/>
+            <apex:commandButton action="{!divide}" value="Divide" rerender="id1"/>
+            </div>
+        </apex:pageBlock>
+    </apex:pageBlockSection>
+     <apex:outputPanel id="id1">
+                <apex:pageBlockSection >
+                    <apex:inputText label="{!dummy} = " value="{!c}"/>
+         </apex:pageBlockSection>
+    </apex:outputPanel>
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

@@ -1,0 +1,28 @@
+<apex:page standardController="Account">
+    <script> 
+    alert("hii");
+    </script>
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Rating"></apex:outputLabel>
+                    <apex:actionRegion >
+                    	<apex:inputField value="{!Account.Rating}">
+                            <apex:actionSupport event="onchange" rerender="listPriceId"/>
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:outputPanel id="listPriceId">
+            	<apex:pageBlockSection >
+                	<apex:inputField value="{!Account.Fax}" rendered="{!Account.Rating == 'Cold'}"/>
+                    <apex:inputField value="{!Account.Name}" rendered="{!Account.Rating == 'Hot'}"/>
+                    <apex:inputField value="{!Account.Phone}" required="{!Account.Rating == 'Hot'}" rendered="{!Account.Rating == 'Hot'}"/>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

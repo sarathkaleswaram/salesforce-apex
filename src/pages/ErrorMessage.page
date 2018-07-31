@@ -1,0 +1,17 @@
+<apex:page standardController="Account" >
+<apex:pageMessage summary="Ok Thank You"
+                      severity="confirm"
+                      strength="3"
+                      rendered="{!Account.Rating = 'Hot'}" />
+    
+    <apex:pageMessage summary="You can do Better"
+                      severity="warning"
+                      strength="3"
+                      rendered="{!Account.Rating = 'Warm'}" />
+
+    <apex:pageMessage summary="Whats Your Problem"
+                      severity="error"
+                      strength="3"
+                      rendered="{!Account.Rating = 'Cold'}" />
+
+</apex:page>

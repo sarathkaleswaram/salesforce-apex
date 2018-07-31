@@ -1,0 +1,25 @@
+41.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+06:23:53.0 (324524)|EXECUTION_STARTED
+06:23:53.0 (355753)|CODE_UNIT_STARTED|[EXTERNAL]|VisualForce View State
+06:23:53.0 (7857153)|CODE_UNIT_FINISHED|VisualForce View State
+06:23:53.0 (8642844)|EXECUTION_FINISHED
+06:23:53.119 (119186091)|VF_PAGE_MESSAGE|Compile Error: Class batchAccPhoneToConPhone must implement the method: void Database.Batchable&lt;SObject&gt;.finish(Database.BatchableContext) at line 1 column 14
+06:23:53.119 (130870668)|VF_SERIALIZE_VIEWSTATE_BEGIN|
+06:23:53.119 (135592782)|VF_SERIALIZE_VIEWSTATE_END
+06:23:53.144 (144410271)|CUMULATIVE_LIMIT_USAGE
+06:23:53.144 (144410271)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+06:23:53.144 (144410271)|CUMULATIVE_LIMIT_USAGE_END
+

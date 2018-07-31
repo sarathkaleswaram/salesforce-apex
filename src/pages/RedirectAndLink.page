@@ -1,0 +1,18 @@
+<apex:page showHeader="true" sidebar="true" standardController="Chocolate__c" extensions="RedirectAndLinkApex">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Chocolate__c.Name}"/>
+                <apex:inputField value="{!Chocolate__c.Status__c}" />
+                <apex:inputField value="{!Chocolate__c.Accounts__c}" />
+                <apex:inputField value="{!Chocolate__c.Manufacture__c}" />
+                <apex:inputField value="{!Chocolate__c.Price__c}" />
+            </apex:pageBlockSection>
+            <div align="center">
+                <apex:commandButton value="Custom Save" action="{!customSaveMethod}" />
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

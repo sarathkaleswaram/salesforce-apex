@@ -1,0 +1,37 @@
+<apex:page controller="sample">
+    
+    <apex:form >
+    <apex:outputPanel id="refresh">
+     
+    <apex:pageBlock rendered="{!showA}" title="Block A">
+        <apex:pageBlockSection title="Section A">
+            <apex:outputText value="This is section A"/>
+       </apex:pageBlockSection>
+    </apex:pageBlock>    
+    
+    <apex:pageBlock rendered="{!showB}" title="Block B">
+        <apex:pageBlockSection title="Section B">
+            <apex:outputText value="This is section B"/>
+       </apex:pageBlockSection>
+    </apex:pageBlock> 
+        
+    <apex:pageBlock >
+        <apex:commandButton value="Show A" action="{!methodAshow}" reRender="refresh" rendered="{!hideA}"/>
+        <apex:commandButton value="Hide A" action="{!methodAhide}" reRender="refresh" rendered="{!showA}"/>
+        <apex:commandButton value="Show B" action="{!methodBshow}" reRender="refresh" rendered="{!hideB}"/>
+        <apex:commandButton value="Hide B" action="{!methodBhide}" reRender="refresh" rendered="{!showB}"/>
+        <apex:commandButton value="Show All" action="{!methodAllshow}" reRender="refresh" rendered="{!showAB}"/>
+        <apex:commandButton value="Hide All" action="{!methodAllhide}" reRender="refresh" rendered="{!hideAB}"/>
+    </apex:pageBlock>
+    
+    </apex:outputPanel>
+    
+        <apex:pageBlock title="Array Values">
+        <apex:pageBlockTable value="{!str}" var="a">
+            <apex:column value="{!a}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+
+</apex:page>

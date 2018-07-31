@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:form >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            function toggleDiv() {
+            $("[id$=op]").toggle();
+        }
+        </script>
+        <apex:outputPanel id="op" >
+            <apex:pageBlock title="Block A" >
+                <apex:pageBlockSection >
+                    Hi I am Block
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        <apex:commandButton value="Button" reRender="null" id="cb" onclick="toggleDiv();"/>
+    </apex:form>
+</apex:page>

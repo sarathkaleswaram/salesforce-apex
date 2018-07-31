@@ -1,0 +1,18 @@
+<apex:page controller="CheckBoxListApex">
+    <apex:form >
+        <apex:pageBlock id="refreshId">
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!accList}" var="cont">
+                    <apex:column >
+                        <apex:facet name="header">Edit</apex:facet>
+                        <apex:inputCheckbox value="{!accMap[cont.Id]}"> 
+                        </apex:inputCheckbox>
+                    </apex:column>
+                    <apex:column value="{!cont.Name}" headerValue="Account Name"/> 
+                </apex:pageBlockTable>
+                <apex:inputText value="{!count}"></apex:inputText>
+                <apex:commandButton action="{!change}" value="Click" reRender="refreshId"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

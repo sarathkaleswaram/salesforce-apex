@@ -1,0 +1,32 @@
+<apex:page showHeader="true" sidebar="true" controller="MetaDataDropDownClass">
+    <apex:form >
+        <apex:pageBlock title="Select Account MetaData">
+            <apex:pageBlockSection title="Section" columns="3">
+                <apex:selectList value="{!accountField}" size="1">
+                    <apex:selectOptions value="{!accountFieldOptions}"/>
+                    <apex:actionSupport event="onchange" action="{!listChangeMethod}" reRender="refresh"/>
+                </apex:selectList>
+                
+                <apex:pageBlockTable value="{!arrayString}" var="acc" id="refresh">
+                    <apex:facet name="header">{!accountField}</apex:facet>
+                    <apex:column value="{!acc}" />
+                </apex:pageBlockTable>
+                
+                
+                <apex:outputPanel >
+                    <apex:outputPanel rendered="{!afName}">
+                        <apex:pageBlockTable value="{!accList}" var="acc">
+                            <apex:column value="{!acc.Name}" />
+                        </apex:pageBlockTable>
+                    </apex:outputPanel>
+                    <apex:pageBlockTable value="{!accList}" var="acc" rendered="{!af}=='Phone'">
+                        <apex:column value="{!acc.Phone}" />
+                    </apex:pageBlockTable>
+                    <apex:pageBlockTable value="{!accList}" var="acc" rendered="{!af}=='Rating'">
+                        <apex:column value="{!acc.Rating}" />
+                    </apex:pageBlockTable>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>	
+</apex:page>

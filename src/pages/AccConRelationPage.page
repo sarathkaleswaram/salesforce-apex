@@ -1,0 +1,44 @@
+<apex:page controller="AccConRelationClass">
+    <apex:form >
+        <apex:pageBlock title="Reset Example" id="resetBlock">
+            <apex:inputText value="{!var}"/>
+            <apex:commandButton value="Click" reRender="showBlock" action="{!method()}"/>
+            <apex:commandButton value="Reset" reRender="resetBlock" action="{!resetMethod}"/>
+        </apex:pageBlock>
+        <apex:outputPanel id="showBlock">
+            <apex:pageBlock title="Contacts & Accounts" rendered="{!show}">
+                <apex:pageBlockTable value="{!conList}" var="cl">
+                    
+                    <apex:column>
+                    <apex:commandLink action="{!paramMethod}" value="{!cl.LastName}" reRender="test">
+                        <apex:param name="id" value="{!cl.Id}" />
+                        <apex:param name="conName1" value="{!cl.LastName}" />
+                    </apex:commandLink>
+                </apex:column>
+                    <apex:column value="{!cl.Account.Name}"/>
+                    <apex:column value="{!cl.Account.Phone}"/>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlock>    
+        </apex:outputPanel>
+        <apex:pageBlock title="lsdkjf">
+            <apex:pageBlockSection id="test">
+                    <apex:outputField value="{!con1.phone}" />
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        <apex:pageBlock title="Calling Child From Parent">
+            <apex:pageBlockSection title="Accounts">
+                <apex:pageBlockTable value="{!accList}" var="accCon">
+                    <apex:column value="{!accCon.id}"/>
+                    <apex:column value="{!accCon.Name}"/>
+                    <apex:column headerClass="Contacts">
+                        <apex:pageBlockTable value="{!accCon.contacts}" var="con" rendered="{!NOT(ISNULL(accCon.Contacts))}">
+                            <apex:column value="{!con.id}"/>
+                            <apex:column value="{!con.name}"/>
+                        </apex:pageBlockTable>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

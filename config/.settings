@@ -1,0 +1,17 @@
+{
+    "projectName": "Apex Academy",
+    "username": "ksb994@gmail.com",
+    "id": "bc8132e0-e170-11e7-b345-81c8fc4624b2",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://na73.salesforce.com",
+    "workspace": "C:\\Users\\Sharath\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

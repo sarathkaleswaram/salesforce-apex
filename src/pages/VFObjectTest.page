@@ -1,0 +1,5 @@
+<apex:page standardController="VFObjectTest__c">
+    <apex:pageBlock title="VFObjectTest">
+    
+    </apex:pageBlock>    
+</apex:page>
